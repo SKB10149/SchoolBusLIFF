@@ -10,25 +10,45 @@
 <body>
 
     <form class="w-75 mx-auto">
+        <p class="mt-3">ID</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="id" placeholder="" required>
+        </div>
+        <p class="mt-3">学校名</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="school" placeholder="羽村特別支援学校" required>
+        </div>
+        <p class="mt-3">コース名</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="course" placeholder="旧青梅コース" required>
+        </div>
         <p class="mt-3">名前</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
         </div>
-        <p class="mt-3">腕立て</p>
+        <p class="mt-3">いつから？</p>
         <div>
-            <input class="form-control w-100 mt-1" name="udetate" required>
+            <input class="form-control w-100 mt-1" name="dateFrom" placeholder="" required>
         </div>
-        <p class="mt-3">腹筋</p>
+        <p class="mt-3">いつまで？</p>
         <div>
-            <input class="form-control w-100 mt-1" name="fukkin" required>
+            <input class="form-control w-100 mt-1" name="dateTo" placeholder="" required>
         </div>
-        <p class="mt-3">背筋</p>
+        <p class="mt-3">登校便</p>
         <div>
-            <input class="form-control w-100 mt-1" name="haikin" required>
+            <input class="form-control w-100 mt-1" name="toko" placeholder="" required>
         </div>
-        <p class="mt-3">スクワット</p>
+        <p class="mt-3">下校便</p>
         <div>
-            <input class="form-control w-100 mt-1" name="sukuwat" required>
+            <input class="form-control w-100 mt-1" name="geko" required>
+        </div>
+        <p class="mt-3">休み？</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="absence" required>
+        </div>
+        <p class="mt-3">備考</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="biko" required>
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -71,12 +91,17 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const udetate = $('input[name="udetate"]').val();
-                const fukkin  = $('input[name="fukkin"]').val();
-                const haikin  = $('input[name="haikin"]').val();
-                const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const id       = $('input[name="id"]').val();
+                const school   = $('input[name="school"]').val();
+                const course   = $('input[name="course"]').val();
+                const name     = $('input[name="name"]').val();
+                const dateFrom = $('input[name="dateFrom"]').val();
+                const dateTo   = $('input[name="dateTo"]').val();
+                const toko     = $('input[name="toko"]').val();
+                const geko     = $('input[name="geko"]').val();
+                const absence  = $('input[name="absence"]').val();
+                const biko     = $('input[name="biko"]').val();
+                const msg = `${id}\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
                 sendText(msg);
                 return false;
             });
