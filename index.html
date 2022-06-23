@@ -10,9 +10,9 @@
     <body>
 
         <form class="w-75 mx-auto">
-            <!-- <p class="mt-3">ID</p> -->
+            <p class="mt-3">ID</p> -->
             <div>
-                <input class="form-control w-100 mt-1" type="hidden" name="id" value='=TEXT(NOW(),"yyyymmdd") & Text(ROW()-1,"000")' required>
+                <input class="form-control w-100 mt-1" type="hidden" name=date value=now required>
             </div>
             <p class="mt-3">学校名</p>
             <div>
@@ -49,10 +49,6 @@
             <p class="mt-3">備考</p>
             <div>
                 <input class="form-control w-100 mt-1" name="biko" required>
-            </div>
-            <!-- <p class="mt-3">入力日時</p> -->
-            <div>
-                <input class="form-control w-100 mt-1" type="hidden" name="nowDateTime" id="nowDateTime" value=nowDateTime() required>
             </div>
             <input type="submit" class="mt-4 btn btn-primary" value="送信">
         </form>
@@ -106,7 +102,7 @@
                     const geko     = $('input[name="geko"]').val();
                     const absence  = $('input[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
-                    const msg = `${id}\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
+                    const msg = `${id}\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}\n${nowDateTime()}`;
                     sendText(msg);
                     return false;
                 });
