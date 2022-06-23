@@ -47,10 +47,10 @@
                     array[''] = new Array({cd:"1", label:"学校名を選択してください"});
                     array["hachiojinishi"] = new Array(
                     {cd:"1", label:"コース名"},
-                    {cd:"2", label:"陣馬コース", value:"陣馬コース"},
-                    {cd:"3", label:"石川コース", value:"石川コース"},
-                    {cd:"4", label:"川口コース", value:"川口コース"},
-                    {cd:"5", label:"大和田コース", value:"大和田コース"}
+                    {cd:"2", label:"陣馬コース"},
+                    {cd:"3", label:"石川コース"},
+                    {cd:"4", label:"川口コース"},
+                    {cd:"5", label:"大和田コース"}
                     );
                     array["akiruno"] = new Array(
                     {cd:"1", label:"コース名"},
@@ -144,6 +144,9 @@
                             cource.appendChild(op);
                         }
                     }
+
+                    var selectedValue = $("#select01").val();
+                    return selectedValue;
                 </script>
                 <!-------------->
 
