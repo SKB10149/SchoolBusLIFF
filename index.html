@@ -38,7 +38,114 @@
             </div>
             <p class="mt-3">コース名</p>
             <div>
-                <input class="form-control w-100 mt-1" name="course" placeholder="旧青梅コース" required>
+                <!-- <input class="form-control w-100 mt-1" name="course" placeholder="旧青梅コース" required> -->
+                <select id="course" name="course">
+                    <option value="">学校名を選択してください</option>
+                </select>
+                <!--Javascript--->
+                <script>
+                    var array = new Array();
+                    array[''] = new Array({cd:"1", label:"学校名を選択してください"});
+                    array["hachiojinishi"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"陣馬コース"},
+                    {cd:"3", label:"石川コース"},
+                    {cd:"4", label:"川口コース"},
+                    {cd:"5", label:"大和田コース"}
+                    );
+                    array["akiruno"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"東中神コース"},
+                    {cd:"3", label:"檜原コース"},
+                    {cd:"4", label:"昭島コース"},
+                    {cd:"5", label:"新五日市コース"},
+                    {cd:"6", label:"拝島コース"},
+                    {cd:"7", label:"武蔵増戸コース"},
+                    {cd:"8", label:"急行檜原コース"}
+                    );
+                    array["nanao"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"日野駅コース"},
+                    {cd:"3", label:"万願寺コース"}
+                    );
+                    array["seiho"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"西コース"},
+                    {cd:"3", label:"二俣尾コース"}
+                    );
+                    array["hachiojimo"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"昭島コース"}
+                    );
+                    array["hamura"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"旧青梅コース"},
+                    {cd:"3", label:"友愛コース"},
+                    {cd:"4", label:"成木コース"},
+                    {cd:"5", label:"東大和コース"},
+                    {cd:"6", label:"羽村コース"},
+                    {cd:"7", label:"武蔵村山コース"},
+                    {cd:"8", label:"御岳コース"},
+                    {cd:"9", label:"奥多摩コース"},
+                    {cd:"10", label:"青梅コース"},
+                    {cd:"11", label:"立川コース"},
+                    {cd:"12", label:"新青梅街道コース"},
+                    {cd:"13", label:"福生コース"}
+                    );
+                    array["murayama"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"立川諏訪コース"},
+                    {cd:"3", label:"青梅橋コース"},
+                    {cd:"4", label:"昭和公園コース"},
+                    {cd:"5", label:"江戸街道コース"},
+                    {cd:"6", label:"多摩川コース"},
+                    {cd:"7", label:"モノレールコース"}
+                    );
+                    array["musashidai"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"国立コース"},
+                    {cd:"3", label:"立川南コース"}
+                    );
+                    array["tanashi"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"西東京コース"},
+                    {cd:"3", label:"小平コース"}
+                    );
+                    array["kiyose"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"富士見町コース"},
+                    {cd:"3", label:"東村山コース"}
+                    );
+                    array["tachikawa"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"西砂コース"}
+                    );
+                    array["koganei"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"小平コース"}
+                    );
+                    array["kodaira"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"こぶしコース"}
+                    );
+                    array["komei"] = new Array(
+                    {cd:"1", label:"コース名"},
+                    {cd:"2", label:"仙川コース"}
+                    );
+        
+                    document.getElementById('school').onchange = function(){
+                    cource = document.getElementById("cource");
+                    cource.options.length = 0
+                    var changedPref = school.value;
+                    for (let i = 0; i < array[changedPref].length; i++) {
+                        var op = document.createElement("option");
+                        value = array[changedPref][i]
+                        op.value = value.cd;
+                        op.text = value.label;
+                        cource.appendChild(op);
+                    }}
+                </script>
+                <!-------------->
             </div>
             <p class="mt-3">名前</p>
             <div>
