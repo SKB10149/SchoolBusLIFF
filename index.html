@@ -10,9 +10,9 @@
     <body>
 
         <form class="w-75 mx-auto">
-            <p class="mt-3">ID</p>
+            <p class="mt-3" type="hidden">ID</p>
             <div>
-                <input class="form-control w-100 mt-1" type="hidden" name="id" value="=TEXT(NOW(),'yyyymd') & Text(ROW()-1,'000')" required>
+                <input class="form-control w-100 mt-1" type="hidden" name="id" value='=TEXT(NOW(),"yyyymmdd") & Text(ROW()-1,"000")' required>
             </div>
             <p class="mt-3">学校名</p>
             <div>
@@ -50,7 +50,7 @@
             <div>
                 <input class="form-control w-100 mt-1" name="biko" required>
             </div>
-            <p class="mt-3">入力日時</p>
+            <p class="mt-3" type="hidden">入力日時</p>
             <div>
                 <input class="form-control w-100 mt-1" type="hidden" name="nowDateTime" id=nowDateTime() required>
             </div>
@@ -62,6 +62,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+        <script src="nowDateTime.js"></script>
         <script>
 
             $(document).ready(function () {
