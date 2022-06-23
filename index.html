@@ -10,7 +10,7 @@
     <body>
 
         <form class="w-75 mx-auto">
-            <p class="mt-3" type="hidden">ID</p>
+            <!-- <p class="mt-3">ID</p> -->
             <div>
                 <input class="form-control w-100 mt-1" type="hidden" name="id" value='=TEXT(NOW(),"yyyymmdd") & Text(ROW()-1,"000")' required>
             </div>
@@ -50,9 +50,9 @@
             <div>
                 <input class="form-control w-100 mt-1" name="biko" required>
             </div>
-            <p class="mt-3" type="hidden">入力日時</p>
+            <!-- <p class="mt-3">入力日時</p> -->
             <div>
-                <input class="form-control w-100 mt-1" type="hidden" name="nowDateTime" id=nowDateTime() required>
+                <input class="form-control w-100 mt-1" type="hidden" name="nowDateTime" id="nowDateTime" value=nowDateTime() required>
             </div>
             <input type="submit" class="mt-4 btn btn-primary" value="送信">
         </form>
