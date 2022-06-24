@@ -101,7 +101,8 @@
 
             // 学校名が選択されたら（change）、処理を行う [3]
             schoolSelect.addEventListener('change', (e) => {
-                setCourceOptions(e.target.value); 
+                setCourceOptions(e.target.value);
+                console.log(e.target.value);
                 // 選択された学校名を引数として関数に渡す
                 // ※e.target.valueはschoolSelectで選択された値
             });
@@ -109,8 +110,7 @@
             // 選択された学校名を受け取って処理 [4]
             const setCourseOptions = function(selectedSchool){
                 const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
-                //selectCourseName.option[].selected = false
-                selectCourseName.disabled = true; //選択可能な状態にする
+                selectCourseName.disabled = false; //選択可能な状態にする
 
                 //選択された学校名のコース一覧に対して処理をする
                 courseName[selectedSchool].forEach((menu, index) => {
