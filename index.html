@@ -103,7 +103,7 @@
 
                 //選択された学校名のコース一覧に対して処理をする
                 courseName[selectedSchool].forEach((menu, index) => {
-                    const option = document.createElement('school'); //option要素を新しく作る
+                    const option = document.createElement('option'); //option要素を新しく作る
                     option.value = index; //option要素の値に、コースを識別できる番号を指定する
                     option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
                     selectCourseName.appendChild(option); //セレクトボックスにoption要素を追加する
