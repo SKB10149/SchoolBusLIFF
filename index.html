@@ -109,7 +109,7 @@
             // 選択された学校名を受け取って処理 [4]
             const setCourseOptions(selectedSchool){
                 const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
-                course.disabled = false; //選択可能な状態にする
+                menuList.disabled = false; //選択可能な状態にする
 
                 //選択された学校名のコース一覧に対して処理をする
                 courseName[selectedSchool].forEach((menu, index) => {
