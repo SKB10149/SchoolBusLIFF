@@ -19,136 +19,27 @@
             <div>
                 <!-- <input class="form-control w-100 mt-1" name="school" placeholder="羽村特別支援学校" required> -->
                 <select class="form-control w-100 mt-1" id="school" name="school">
-                    <option value="" selected>学校名
-                    <option value="hamura">羽村特別支援学校
-                    <option value="akiruno">あきる野学園
-                    <option value="hachiojinishi">八王子西特別支援学校
-                    <option value="nanao">七生特別支援学校
-                    <option value="seiho">青峰学園
-                    <option value="hachiojimo">八王子盲学校
-                    <option value="murayama">村山特別支援学校
-                    <option value="musashidai">武蔵台学園
-                    <option value="tanashi">田無特別支援学校
-                    <option value="kiyose">清瀬特別支援学校
-                    <option value="tachikawa">立川学園
-                    <option value="koganei">小金井特別支援学校
-                    <option value="kodaira">小平特別支援学校
-                    <option value="komei">光明学園
+                    <option disabled selected>学校名</option>
+                    <option value="hamura">羽村特別支援学校</option>
+                    <option value="akiruno">あきる野学園</option>
+                    <option value="hachiojinishi">八王子西特別支援学校</option>
+                    <option value="nanao">七生特別支援学校</option>
+                    <option value="seiho">青峰学園</option>
+                    <option value="hachiojimo">八王子盲学校</option>
+                    <option value="murayama">村山特別支援学校</option>
+                    <option value="musashidai">武蔵台学園</option>
+                    <option value="tanashi">田無特別支援学校</option>
+                    <option value="kiyose">清瀬特別支援学校</option>
+                    <option value="tachikawa">立川学園</option>
+                    <option value="koganei">小金井特別支援学校</option>
+                    <option value="kodaira">小平特別支援学校</option>
+                    <option value="komei">光明学園</option>
                 </select>
                 <p class="mt-3">コース名</p>
                 <!-- <input class="form-control w-100 mt-1" name="course" placeholder="旧青梅コース" required> -->
-                <select class="form-control w-100 mt-1" id="course" name="course">
-                    <option value="">学校名を選択してください</option>
+                <select class="form-control w-100 mt-1" id="course" name="course" disabled>
+                    <option disabled selected>学校名を選択してください</option>
                 </select>
-
-                <!--Javascript--->
-                <script>
-                    var array = new Array();
-                    array[''] = new Array({cd:"1", label:"学校名を選択してください"});
-                    array["hachiojinishi"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"陣馬コース"},
-                    {cd:"3", label:"石川コース"},
-                    {cd:"4", label:"川口コース"},
-                    {cd:"5", label:"大和田コース"}
-                    );
-                    array["akiruno"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"東中神コース"},
-                    {cd:"3", label:"檜原コース"},
-                    {cd:"4", label:"昭島コース"},
-                    {cd:"5", label:"新五日市コース"},
-                    {cd:"6", label:"拝島コース"},
-                    {cd:"7", label:"武蔵増戸コース"},
-                    {cd:"8", label:"急行檜原コース"}
-                    );
-                    array["nanao"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"日野駅コース"},
-                    {cd:"3", label:"万願寺コース"}
-                    );
-                    array["seiho"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"西コース"},
-                    {cd:"3", label:"二俣尾コース"}
-                    );
-                    array["hachiojimo"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"昭島コース"}
-                    );
-                    array["hamura"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"旧青梅コース"},
-                    {cd:"3", label:"友愛コース"},
-                    {cd:"4", label:"成木コース"},
-                    {cd:"5", label:"東大和コース"},
-                    {cd:"6", label:"羽村コース"},
-                    {cd:"7", label:"武蔵村山コース"},
-                    {cd:"8", label:"御岳コース"},
-                    {cd:"9", label:"奥多摩コース"},
-                    {cd:"10", label:"青梅コース"},
-                    {cd:"11", label:"立川コース"},
-                    {cd:"12", label:"新青梅街道コース"},
-                    {cd:"13", label:"福生コース"}
-                    );
-                    array["murayama"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"立川諏訪コース"},
-                    {cd:"3", label:"青梅橋コース"},
-                    {cd:"4", label:"昭和公園コース"},
-                    {cd:"5", label:"江戸街道コース"},
-                    {cd:"6", label:"多摩川コース"},
-                    {cd:"7", label:"モノレールコース"}
-                    );
-                    array["musashidai"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"国立コース"},
-                    {cd:"3", label:"立川南コース"}
-                    );
-                    array["tanashi"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"西東京コース"},
-                    {cd:"3", label:"小平コース"}
-                    );
-                    array["kiyose"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"富士見町コース"},
-                    {cd:"3", label:"東村山コース"}
-                    );
-                    array["tachikawa"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"西砂コース"}
-                    );
-                    array["koganei"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"小平コース"}
-                    );
-                    array["kodaira"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"こぶしコース"}
-                    );
-                    array["komei"] = new Array(
-                    {cd:"1", label:"コース名"},
-                    {cd:"2", label:"仙川コース"}
-                    );
-        
-                    document.getElementById('school').onchange = function(){
-                        cource = document.getElementById("course");
-                        cource.options.length = 0
-                        var changedPref = school.value;
-                        for (let i = 0; i < array[changedPref].length; i++) {
-                            var op = document.createElement("option");
-                            value = array[changedPref][i]
-                            op.value = value.cd;
-                            op.text = value.label;
-                            cource.appendChild(op);
-                        }
-                    }
-
-                    // var selectedValue = $("#select01").val();
-                    // return selectedValue;
-                </script>
-                <!-------------->
 
             </div>
             <p class="mt-3">名前</p>
@@ -184,6 +75,49 @@
             <input type="submit" class="mt-4 btn btn-primary" value="送信">
         </form>
 
+        <!--Javascript--->
+        <script>
+            // 学校名の値と、それに対応するコース一覧を格納
+            const courseName = 
+                {
+                    "hachiojinishi": ["陣馬コース", "石川コース", "川口コース", "大和田コース"],
+                    "akiruno": ["東中神コース", "檜原コース", "昭島コース", "新五日市コース", "拝島コース", "武蔵増戸コース", "急行檜原コース"],
+                    "nanao": ["日野駅コース", "万願寺コース"],
+                    "seiho": ["二俣尾コース", "西コース"],
+                    "hachiojimo": ["昭島コース"],
+                    "hamura": ["旧青梅コース", "友愛コース", "成木コース", "東大和コース", "羽村コース", "武蔵村山コース", "御岳コース", "奥多摩コース", "青梅コース", "立川コース", "新青梅街道コース", "福生コース"],
+                    "murayama": ["立川諏訪コース", "青梅橋コース", "昭和公園コース", "江戸街道コース", "多摩川コース", "モノレールコース"],
+                    "musashidai": ["国立コース", "立川南コース"],
+                    "tanashi": ["西東京コース", "小平コース"],
+                    "kiyose": ["富士見町コース", "東村山コース"],
+                    "tachikawa": ["西砂コース"],
+                    "koganei": ["小平コース"],
+                    "kodaira": ["こぶしコース"],
+                    "komei": ["仙川コース"]
+                };
+
+            // 選択された学校名を受け取って処理
+            const setCourseOptions = function(selectedSchool){
+                const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
+                menuList.disabled = false; //選択可能な状態にする
+
+                //選択された学校名のコース一覧に対して処理をする
+                courseName[selectedSchool].forEach((menu, index) => {
+                    const option = document.createElement('option'); //option要素を新しく作る
+                    option.value = index; //option要素の値に、コースを識別できる番号を指定する
+                    option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
+                    selectCourseName.appendChild(option); //セレクトボックスにoption要素を追加する
+                });
+            }
+
+            // 学校名を選ぶためのセレクトボックスを指定
+            const schoolSelect = document.getElementById('school');
+
+            // 学校名が選択されたら（change）、処理を行う
+            schoolSelect.addEventListener('change', (e) => {
+                setCourceOptions(e.target.value);
+            })
+        </script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
@@ -192,7 +126,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.full.min.js"></script>
         <script>
-
             $(document).ready(function () {
                 const liffId = "1657192970-L5pw3bd6";
                 initializeLiff(liffId);
