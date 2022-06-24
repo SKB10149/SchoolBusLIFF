@@ -96,21 +96,9 @@
                     "komei": ["仙川コース"]
                 };
 
-            // 学校名を選ぶためのセレクトボックスを指定 [2]
-            const schoolSelect = document.getElementById('school');
-
-            // 学校名が選択されたら（change）、処理を行う [3]
-            schoolSelect.addEventListener('change', (e) => {
-                setCourceOptions(e.target.value);
-                alert(e.target.value);
-                // 選択された学校名を引数として関数に渡す
-                // ※e.target.valueはschoolSelectで選択された値
-            });
-
             // 選択された学校名を受け取って処理 [4]
             const setCourseOptions = function(selectedSchool){
-                // const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
-                const selectCourseName = selectedSchool.getElementById('cource')
+                const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
                 selectCourseName.disabled = false; //選択可能な状態にする
 
                 //選択された学校名のコース一覧に対して処理をする
@@ -121,6 +109,16 @@
                     selectCourseName.appendChild(option); //セレクトボックスにoption要素を追加する
                 });
             }
+
+            // 学校名を選ぶためのセレクトボックスを指定 [2]
+            const schoolSelect = document.getElementById('school');
+
+            // 学校名が選択されたら（change）、処理を行う [3]
+            schoolSelect.addEventListener('change', (e) => {
+                setCourceOptions(e.target.value);
+                // 選択された学校名を引数として関数に渡す
+                // ※e.target.valueはschoolSelectで選択された値
+            });
         </script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
