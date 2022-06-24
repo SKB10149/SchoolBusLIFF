@@ -102,6 +102,7 @@
                 selectCourseName.disabled = false; //選択可能な状態にする
 
                 //選択された学校名のコース一覧に対して処理をする
+                
                 courseName[selectedSchool].forEach((menu, index) => {
                     const option = document.createElement('option'); //option要素を新しく作る
                     option.value = index; //option要素の値に、コースを識別できる番号を指定する
@@ -118,7 +119,7 @@
                 setCourseOptions(e.target.value);
                 // 選択された学校名を引数として関数に渡す
                 // ※e.target.valueはschoolSelectで選択された値
-            });
+            })
         </script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
