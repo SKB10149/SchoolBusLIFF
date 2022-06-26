@@ -160,7 +160,7 @@
             //選択されたジャンルを受け取って処理をする -- [4]
             const setMenuOptions = function(selectedGenre){
             const selectFoodName = document.getElementById('food-name'); //2つめのセレクトボックスを取得し
-            menuList.disabled = false; //選択可能な状態にする
+            selectFoodName.disabled = false; //選択可能な状態にする
 
             //選択されたジャンルのメニュー一覧に対して処理をする
             foodMenu[selectedGenre].forEach((menu, index) => {
