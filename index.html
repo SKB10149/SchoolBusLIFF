@@ -9,17 +9,28 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
+        <!-- 1つめのセレクトボックス。これは静的に生成されている（最初から内容が決まっている） -->
+        <select name="genre" id="genre">
+            <option disabled selected>ジャンルを選択してください</option>
+            <option value="japaneseFoods">和食</option>
+            <option value="chineseFoods">中華</option>
+            <option value="italianFoods">イタリアン</option>
+        </select>
+        <!-- 2つめのセレクトボックス。1つめで選んだジャンルに応じて、動的に選択肢を追加する -->
+        <select name="food-name" id="food-name" disabled>
+            <option disabled selected>料理を選択してください</option>
+        </select>
 
         <form class="w-75 mx-auto">
             <p class="mt-3">ID</p>
             <div>
                 <input class="form-control w-100 mt-1" name=id value="" required>
             </div>
-            <p class="mt-3">学校名</p>
+            <p class="mt-3">学校名コース名</p>
             <div>
-                <!-- <input class="form-control w-100 mt-1" name="school" placeholder="羽村特別支援学校" required> -->
+                <!-- 1つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="school" name="school">
-                    <option disabled selected>学校名</option>
+                    <option disabled selected>学校名を選択してください</option>
                     <option value="hamura">羽村特別支援学校</option>
                     <option value="akiruno">あきる野学園</option>
                     <option value="hachiojinishi">八王子西特別支援学校</option>
@@ -35,12 +46,10 @@
                     <option value="kodaira">小平特別支援学校</option>
                     <option value="komei">光明学園</option>
                 </select>
-                <p class="mt-3">コース名</p>
-                <!-- <input class="form-control w-100 mt-1" name="course" placeholder="旧青梅コース" required> -->
+                <!-- 2つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="course" name="course" disabled>
-                    <option disabled selected>学校名を選択してください</option>
+                    <option disabled selected>コース名を選択してください</option>
                 </select>
-
             </div>
             <p class="mt-3">名前</p>
             <div>
@@ -76,51 +85,7 @@
         </form>
 
         <!--Javascript--->
-        <script>
-            // 学校名の値と、それに対応するコース一覧を格納 [1]
-            const courseName = 
-                {
-                    "hachiojinishi": ["陣馬コース", "石川コース", "川口コース", "大和田コース"],
-                    "akiruno": ["東中神コース", "檜原コース", "昭島コース", "新五日市コース", "拝島コース", "武蔵増戸コース", "急行檜原コース"],
-                    "nanao": ["日野駅コース", "万願寺コース"],
-                    "seiho": ["二俣尾コース", "西コース"],
-                    "hachiojimo": ["昭島コース"],
-                    "hamura": ["旧青梅コース", "友愛コース", "成木コース", "東大和コース", "羽村コース", "武蔵村山コース", "御岳コース", "奥多摩コース", "青梅コース", "立川コース", "新青梅街道コース", "福生コース"],
-                    "murayama": ["立川諏訪コース", "青梅橋コース", "昭和公園コース", "江戸街道コース", "多摩川コース", "モノレールコース"],
-                    "musashidai": ["国立コース", "立川南コース"],
-                    "tanashi": ["西東京コース", "小平コース"],
-                    "kiyose": ["富士見町コース", "東村山コース"],
-                    "tachikawa": ["西砂コース"],
-                    "koganei": ["小平コース"],
-                    "kodaira": ["こぶしコース"],
-                    "komei": ["仙川コース"]
-                };
-
-            // 選択された学校名を受け取って処理 [4]
-            const setCourseOptions = function(selectedSchool){
-                const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
-                selectCourseName.disabled = false; //選択可能な状態にする
-
-                //選択された学校名のコース一覧に対して処理をする
-                
-                courseName[selectedSchool].forEach((menu, index) => {
-                    const option = document.createElement('option'); //option要素を新しく作る
-                    option.value = index; //option要素の値に、コースを識別できる番号を指定する
-                    option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
-                    selectCourseName.appendChild(option); //セレクトボックスにoption要素を追加する
-                });
-            }
-
-            // 学校名を選ぶためのセレクトボックスを指定 [2]
-            const schoolSelect = document.getElementById('school');
-
-            // 学校名が選択されたら（change）、処理を行う [3]
-            schoolSelect.addEventListener('change', (e) => {
-                setCourseOptions(e.target.value);
-                // 選択された学校名を引数として関数に渡す
-                // ※e.target.valueはschoolSelectで選択された値
-            })
-        </script>
+        <script src="selecterSchoolCourse.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
@@ -183,6 +148,38 @@
               format: 'Y/m/d'
             });
         </script>
+        <script>
+            //料理ジャンルの値と、それに対応するメニュー一覧を格納しておく -- [1]
+            const foodMenu = 
+                {
+                    "japaneseFoods": ["寿司", "天ぷら", "おでん"],
+                    "chineseFoods": ["八宝菜", "麻婆豆腐", "エビチリ"],
+                    "italianFoods": ["パスタ", "ピザ", "ミネストローネ"]
+                };
 
+            //選択されたジャンルを受け取って処理をする -- [4]
+            const setMenuOptions = function(selectedGenre){
+            const selectFoodName = document.getElementById('food-name'); //2つめのセレクトボックスを取得し
+            menuList.disabled = false; //選択可能な状態にする
+
+            //選択されたジャンルのメニュー一覧に対して処理をする
+            foodMenu[selectedGenre].forEach((menu, index) => {
+                const option = document.createElement('option'); //option要素を新しく作る
+                option.value = index; //option要素の値に、メニューを識別できる番号を指定する
+                option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
+                selectFoodName.appendChild(option); //セレクトボックスにoption要素を追加する
+            });
+            }
+            　
+            //ジャンルを選ぶためのセレクトボックスを指定 -- [2]
+            const genreSelect = document.getElementById('genre');
+
+            //なんらかのジャンルが選択されたら（change）、処理を行う -- [3]
+            genreSelect.addEventListener('change', (e) => {
+            setMenuOptions(e.target.value);  //選択された料理ジャンルを引数として関数に渡す
+            　//※e.target.valueはgenreSelectで選択された値
+            })
+        </script>
+        <!--------------->
     </body>
 </html>
