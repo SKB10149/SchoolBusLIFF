@@ -17,18 +17,6 @@ const courseName =
     "komei": ["仙川コース"]
 };
 
-// コンボボックスの要素を削除
-const cate2 = document.getElementsById("course")[0];
-    clearCombo(cate2);
-
-function clearCombo(dropObj){
-    var options = dropObj.options;
-    var len  = options.length;
-    for(i = len-1; i >= 0; i--){
-        dropObj.removeChild(options.item(i));
-    }
-}
-
 // 選択された学校名を受け取って処理 [4]
 const setCourseOptions = function(selectedSchool){
     const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
@@ -46,9 +34,22 @@ const setCourseOptions = function(selectedSchool){
 // 学校名を選ぶためのセレクトボックスを指定 [2]
 const schoolSelect = document.getElementById('school');
 
+// コンボボックスの要素を削除
+const cate2 = document.getElementsById("course")[0];
+
 // 学校名が選択されたら（change）、処理を行う [3]
 schoolSelect.addEventListener('change', (e) => {
 setCourseOptions(e.target.value);
 // 選択された学校名を引数として関数に渡す
 // ※e.target.valueはschoolSelectで選択された値
 })
+clearCombo(cate2);
+
+function clearCombo(dropObj){
+    var options = dropObj.options;
+    var len  = options.length;
+    for(i = len-1; i >= 0; i--){
+        dropObj.removeChild(options.item(i));
+    }
+    return;
+}
