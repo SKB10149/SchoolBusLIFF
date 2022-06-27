@@ -20,11 +20,15 @@ const courseName =
 // 選択された学校名を受け取って処理 [4]
 const setCourseOptions = function(selectedSchool){
     const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
+    var element = document.getElementById('course');
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
     selectCourseName.disabled = false; //選択可能な状態にする
 
     //選択された学校名のコース一覧に対して処理をする
     courseName[selectedSchool].forEach((menu, index) => {
-        var option = document.createElement('option'); //option要素を新しく作る
+        const option = document.createElement('option'); //option要素を新しく作る
         option.value = index; //option要素の値に、コースを識別できる番号を指定する
         option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
         selectCourseName.appendChild(option); //セレクトボックスにoption要素を追加する
@@ -33,6 +37,7 @@ const setCourseOptions = function(selectedSchool){
 
 // 学校名を選ぶためのセレクトボックスを指定 [2]
 const schoolSelect = document.getElementById('school');
+const courseSelect = document.getElementById('course');
 
 // 学校名が選択されたら（change）、処理を行う [3]
 schoolSelect.addEventListener('change', (e) => {
