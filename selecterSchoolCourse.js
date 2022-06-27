@@ -1,10 +1,10 @@
-function clearDropbox(dropObj){
-    var options = dropObj.options;
-    var len  = options.length;
-    for(i = len-1; i >= 0; i--){
-        dropObj.removeChild(options.item(i));
-    }
-}
+// function clearDropbox(dropObj){
+//     var options = dropObj.options;
+//     var len  = options.length;
+//     for(i = len-1; i >= 0; i--){
+//         dropObj.removeChild(options.item(i));
+//     }
+// }
 
 // 学校名の値と、それに対応するコース一覧を格納 [1]
 const courseName = 
