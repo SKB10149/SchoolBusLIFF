@@ -1,11 +1,3 @@
-function clearDropbox(dropObj){
-    var options = dropObj.options;
-    var len  = options.length;
-    for(i = len-1; i >= 0; i--){
-        dropObj.removeChild(options.item(i));
-    }
-}
-
 // 学校名の値と、それに対応するコース一覧を格納 [1]
 const courseName = 
 {
@@ -24,6 +16,18 @@ const courseName =
     "kodaira": ["こぶしコース"],
     "komei": ["仙川コース"]
 };
+
+// コンボボックスの要素を削除
+const cate2 = document.getElementsById("course")[0];
+    clearCombo(cate2);
+
+function clearCombo(dropObj){
+    var options = dropObj.options;
+    var len  = options.length;
+    for(i = len-1; i >= 0; i--){
+        dropObj.removeChild(options.item(i));
+    }
+}
 
 // 選択された学校名を受け取って処理 [4]
 const setCourseOptions = function(selectedSchool){
