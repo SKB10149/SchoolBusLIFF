@@ -9,18 +9,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- 1つめのセレクトボックス。これは静的に生成されている（最初から内容が決まっている） -->
-        <select name="genre" id="genre">
-            <option disabled selected>ジャンルを選択してください</option>
-            <option value="japaneseFoods">和食</option>
-            <option value="chineseFoods">中華</option>
-            <option value="italianFoods">イタリアン</option>
-        </select>
-        <!-- 2つめのセレクトボックス。1つめで選んだジャンルに応じて、動的に選択肢を追加する -->
-        <select name="food-name" id="food-name" disabled>
-            <option disabled selected>料理を選択してください</option>
-        </select>
-
         <form class="w-75 mx-auto">
             <p class="mt-3">ID</p>
             <div>
@@ -148,38 +136,8 @@
               format: 'Y/m/d'
             });
         </script>
-        <script>
-            //料理ジャンルの値と、それに対応するメニュー一覧を格納しておく -- [1]
-            const foodMenu = 
-                {
-                    "japaneseFoods": ["寿司", "天ぷら", "おでん"],
-                    "chineseFoods": ["八宝菜", "麻婆豆腐", "エビチリ"],
-                    "italianFoods": ["パスタ", "ピザ", "ミネストローネ"]
-                };
-
-            //選択されたジャンルを受け取って処理をする -- [4]
-            const setMenuOptions = function(selectedGenre){
-            const selectFoodName = document.getElementById('food-name'); //2つめのセレクトボックスを取得し
-            selectFoodName.disabled = false; //選択可能な状態にする
-
-            //選択されたジャンルのメニュー一覧に対して処理をする
-            foodMenu[selectedGenre].forEach((menu, index) => {
-                const option = document.createElement('option'); //option要素を新しく作る
-                option.value = index; //option要素の値に、メニューを識別できる番号を指定する
-                option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
-                selectFoodName.appendChild(option); //セレクトボックスにoption要素を追加する
-            });
-            }
-            　
-            //ジャンルを選ぶためのセレクトボックスを指定 -- [2]
-            const genreSelect = document.getElementById('genre');
-
-            //なんらかのジャンルが選択されたら（change）、処理を行う -- [3]
-            genreSelect.addEventListener('change', (e) => {
-            setMenuOptions(e.target.value);  //選択された料理ジャンルを引数として関数に渡す
-            　//※e.target.valueはgenreSelectで選択された値
-            })
-        </script>
+        <script></script>
+        <script></script>
         <!--------------->
     </body>
 </html>
