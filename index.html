@@ -126,14 +126,14 @@
             $(function () {
                 $('form').submit(function () {
                     const id       = $('input[name="id"]').val();
-                    const school   = $('input[name="school"]').val();
-                    const course   = $('input[name="course"]').val();
+                    const school   = $('option[name="school"]').val();
+                    const course   = $('option[name="course"]').val();
                     const name     = $('input[name="name"]').val();
                     const dateFrom = $('input[name="dateFrom"]').val();
                     const dateTo   = $('input[name="dateTo"]').val();
-                    const toko     = $('input[name="toko"]').val();
-                    const geko     = $('input[name="geko"]').val();
-                    const absence  = $('input[name="absence"]').val();
+                    const toko     = $('option[name="toko"]').val();
+                    const geko     = $('option[name="geko"]').val();
+                    const absence  = $('option[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
                     const msg = `${id}\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
                     sendText(msg);
