@@ -37,7 +37,6 @@ const setCourseOptions = function(selectedSchool){
 
 // 学校名を選ぶためのセレクトボックスを指定 [2]
 const schoolSelect = document.getElementById('school');
-const courseSelect = document.getElementById('course');
 
 // 学校名が選択されたら（change）、処理を行う [3]
 schoolSelect.addEventListener('change', (e) => {
