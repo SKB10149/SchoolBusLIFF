@@ -19,20 +19,20 @@
                 <!-- 1つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="school" name="school">
                     <option disabled selected>学校名を選択してください</option>
-                    <option value="hamura" name="school">羽村特別支援学校</option>
-                    <option value="akiruno" name="school">あきる野学園</option>
-                    <option value="hachiojinishi" name="school">八王子西特別支援学校</option>
-                    <option value="nanao" name="school">七生特別支援学校</option>
-                    <option value="seiho" name="school">青峰学園</option>
-                    <option value="hachiojimo" name="school">八王子盲学校</option>
-                    <option value="murayama" name="school">村山特別支援学校</option>
-                    <option value="musashidai" name="school">武蔵台学園</option>
-                    <option value="tanashi" name="school">田無特別支援学校</option>
-                    <option value="kiyose" name="school">清瀬特別支援学校</option>
-                    <option value="tachikawa" name="school">立川学園</option>
-                    <option value="koganei" name="school">小金井特別支援学校</option>
-                    <option value="kodaira" name="school">小平特別支援学校</option>
-                    <option value="komei" name="school">光明学園</option>
+                    <option value="羽村特別支援学校" name="school">羽村特別支援学校</option>
+                    <option value="あきる野学園" name="school">あきる野学園</option>
+                    <option value="八王子西特別支援学校" name="school">八王子西特別支援学校</option>
+                    <option value="七生特別支援学校" name="school">七生特別支援学校</option>
+                    <option value="青峰学園" name="school">青峰学園</option>
+                    <option value="八王子盲学校" name="school">八王子盲学校</option>
+                    <option value="村山特別支援学校" name="school">村山特別支援学校</option>
+                    <option value="武蔵台学園" name="school">武蔵台学園</option>
+                    <option value="田無特別支援学校" name="school">田無特別支援学校</option>
+                    <option value="清瀬特別支援学校" name="school">清瀬特別支援学校</option>
+                    <option value="立川学園" name="school">立川学園</option>
+                    <option value="小金井特別支援学校" name="school">小金井特別支援学校</option>
+                    <option value="小平特別支援学校" name="school">小平特別支援学校</option>
+                    <option value="光明学園" name="school">光明学園</option>
                 </select>
                 <!-- 2つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="course" name="course" disabled>
@@ -56,23 +56,23 @@
             <p class="mt-3">登校便</p>
             <div>
                 <select class="form-control w-100 mt-1" id="toko" name="toko">
-                    <option value='登校none' selected required>-</option>
-                    <option value='登校乗る' required>乗る</option>
-                    <option value='登校乗らない' required>乗らない</option>
+                    <option value='-' selected required>-</option>
+                    <option value='乗る' required>乗る</option>
+                    <option value='乗らない' required>乗らない</option>
                 </select>
             </div>
             <p class="mt-3">下校便</p>
             <div>
                 <select class="form-control w-100 mt-1" id="geko" name="geko">
-                    <option value='下校none' selected required>-</option>
-                    <option value='下校乗る' required>乗る</option>
-                    <option value='下校乗らない' required>乗らない</option>
+                    <option value='-' selected required>-</option>
+                    <option value='乗る' required>乗る</option>
+                    <option value='乗らない' required>乗らない</option>
                 </select>
             </div>
             <p class="mt-3">休み？</p>
             <div>
                 <select class="form-control w-100 mt-1" id="geko" name="geko">
-                    <option value='休み' selected required>-</option>
+                    <option value='-' selected required>-</option>
                     <option value='お休み' required>お休み</option>
                 </select>
             </div>
@@ -127,13 +127,13 @@
                 $('form').submit(function () {
                     const id       = $('input[name="id"]').val();
                     const school   = $('select[name="school"]').val();
-                    const course   = $('option[name="course"]').val();
+                    const course   = $('select[name="course"]').val();
                     const name     = $('input[name="name"]').val();
                     const dateFrom = $('input[name="dateFrom"]').val();
                     const dateTo   = $('input[name="dateTo"]').val();
-                    const toko     = $('option[name="toko"]').val();
-                    const geko     = $('option[name="geko"]').val();
-                    const absence  = $('option[name="absence"]').val();
+                    const toko     = $('select[name="toko"]').val();
+                    const geko     = $('select[name="geko"]').val();
+                    const absence  = $('select[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
                     const msg = `${id}\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
                     sendText(msg);
