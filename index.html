@@ -71,11 +71,14 @@
             </div>
             <p class="mt-3">休み？</p>
             <div>
-                <input class="form-control w-100 mt-1" name="absence" required>
+                <select class="form-control w-100 mt-1" id="geko" name="geko">
+                    <option value='休み' selected required>-</option>
+                    <option value='お休み' required>お休み</option>
+                </select>
             </div>
             <p class="mt-3">備考</p>
             <div>
-                <input class="form-control w-100 mt-1" name="biko" required>
+                <input class="form-control w-100 mt-1" name="biko" value="-" placeholder="何かあれば入力してください。" required>
             </div>
             <input type="button" class="mt-4 btn btn-primary" value="キャンセル">
             <input type="submit" class="mt-4 btn btn-primary" value="送信">
