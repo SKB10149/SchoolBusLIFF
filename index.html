@@ -19,20 +19,20 @@
                 <!-- 1つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="school" name="school">
                     <option disabled selected>学校名を選択してください</option>
-                    <option value="羽村特別支援学校" name="school">羽村特別支援学校</option>
-                    <option value="あきる野学園" name="school">あきる野学園</option>
-                    <option value="八王子西特別支援学校" name="school">八王子西特別支援学校</option>
-                    <option value="七生特別支援学校" name="school">七生特別支援学校</option>
-                    <option value="青峰学園" name="school">青峰学園</option>
-                    <option value="八王子盲学校" name="school">八王子盲学校</option>
-                    <option value="村山特別支援学校" name="school">村山特別支援学校</option>
-                    <option value="武蔵台学園" name="school">武蔵台学園</option>
-                    <option value="田無特別支援学校" name="school">田無特別支援学校</option>
-                    <option value="清瀬特別支援学校" name="school">清瀬特別支援学校</option>
-                    <option value="立川学園" name="school">立川学園</option>
-                    <option value="小金井特別支援学校" name="school">小金井特別支援学校</option>
-                    <option value="小平特別支援学校" name="school">小平特別支援学校</option>
-                    <option value="光明学園" name="school">光明学園</option>
+                    <option value="羽村特別支援学校" name="羽村特別支援学校">羽村特別支援学校</option>
+                    <option value="あきる野学園" name="あきる野学園">あきる野学園</option>
+                    <option value="八王子西特別支援学校" name="八王子西特別支援学校">八王子西特別支援学校</option>
+                    <option value="七生特別支援学校" name="七生特別支援学校">七生特別支援学校</option>
+                    <option value="青峰学園" name="青峰学園">青峰学園</option>
+                    <option value="八王子盲学校" name="八王子盲学校">八王子盲学校</option>
+                    <option value="村山特別支援学校" name="村山特別支援学校">村山特別支援学校</option>
+                    <option value="武蔵台学園" name="武蔵台学園">武蔵台学園</option>
+                    <option value="田無特別支援学校" name="田無特別支援学校">田無特別支援学校</option>
+                    <option value="清瀬特別支援学校" name="清瀬特別支援学校">清瀬特別支援学校</option>
+                    <option value="立川学園" name="立川学園">立川学園</option>
+                    <option value="小金井特別支援学校" name="小金井特別支援学校">小金井特別支援学校</option>
+                    <option value="小平特別支援学校" name="小平特別支援学校">小平特別支援学校</option>
+                    <option value="光明学園" name="光明学園">光明学園</option>
                 </select>
                 <!-- 2つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="course" name="course" disabled>
@@ -127,8 +127,8 @@
                 $('form').submit(function () {
                     const id       = $('input[name="id"]').val();
                     const school   = $('select[name="school"]').val();
-                    // const course   = $('select[name="course"]').val();
-                    const course = $('#course').val();
+                    const course   = $('select[name="course"]').attr('name');
+                    // const course = $('#course').val();
                     const name     = $('input[name="name"]').val();
                     const dateFrom = $('input[name="dateFrom"]').val();
                     const dateTo   = $('input[name="dateTo"]').val();
