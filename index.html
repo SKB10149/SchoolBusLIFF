@@ -127,7 +127,7 @@
                 $('form').submit(function () {
                     const id       = $('input[name="id"]').val();
                     const school   = $('select[name="school"]').val();
-                    const course   = $('select[name="course"]').attr();
+                    const course   = $('select[name="course"] option:selected').text();
                     // const course = $('#course').val();
                     const name     = $('input[name="name"]').val();
                     const dateFrom = $('input[name="dateFrom"]').val();
