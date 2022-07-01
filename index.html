@@ -12,7 +12,7 @@
         <form class="w-75 mx-auto">
             <p class="mt-3">ID</p>
             <div>
-                <input class="form-control w-100 mt-1" type="text" value="20220628001" id="id" name="id" placeholder="yyyymmdd###">
+                <input class="form-control w-100 mt-1" type="text" value="20220628001" id="id" name="id" placeholder="yyyymmdd###" onload="">
             </div>
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -45,13 +45,11 @@
             </div>
             <p class="mt-3">いつから？</p>
             <div>
-                <!-- <input class="form-control w-100 mt-1" name="dateFrom" placeholder="" required> -->
-                <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateFrom" placeholder="" required>
+                <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateFrom" placeholder="">
             </div>
             <p class="mt-3">いつまで？</p>
             <div>
-                <!-- <input class="form-control w-100 mt-1" name="dateTo" placeholder="" required> -->
-                <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateTo" placeholder="" required>
+                <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateTo" placeholder="">
             </div>
             <p class="mt-3">登校便</p>
             <div>
@@ -128,7 +126,6 @@
                     const id       = $('input[name="id"]').val();
                     const school   = $('select[name="school"]').val();
                     const course   = $('select[name="course"] option:selected').text();
-                    // const course = $('#course').val();
                     const name     = $('input[name="name"]').val();
                     const dateFrom = $('input[name="dateFrom"]').val();
                     const dateTo   = $('input[name="dateTo"]').val();
@@ -136,6 +133,7 @@
                     const geko     = $('select[name="geko"]').val();
                     const absence  = $('select[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
+                    const updateDateTime = now();
                     const msg = `${id}\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
                     sendText(msg);
                     return false;
@@ -153,7 +151,13 @@
                 liff.closeWindow();
             }
         </script>
-        <script></script>
+        <script>
+            window.onload = function(){
+                const id = document.getElementById('id');
+
+                id.textContent = 'test001';
+            }
+        </script>
         <!--------------->
     </body>
 </html>
