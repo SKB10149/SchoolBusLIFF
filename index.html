@@ -82,6 +82,7 @@
             <p class="mt-3">特記事項</p>
             <div>
                 <input class="form-control w-100 mt-1 h-500" name="biko" value="-" required>
+                <textarea class="form-control w-100 mt-1 h-500" name="biko" value="-" id="textarea" required></textarea>
             </div>
             <hr>
             <input type="button" class="mt-4 btn btn-primary" value="キャンセル" onclick="onCancelClick()">
@@ -163,6 +164,22 @@
 
                 id.textContent = 'test001';
             }
+        </script>
+        <script>
+            //textareaの要素を取得
+            let textarea = document.getElementById('textarea');
+            //textareaのデフォルトの要素の高さを取得
+            let clientHeight = textarea.clientHeight;
+
+            //textareaのinputイベント
+            textarea.addEventListener('input', ()=>{
+                //textareaの要素の高さを設定（rows属性で行を指定するなら「px」ではなく「auto」で良いかも！）
+                textarea.style.height = clientHeight + 'px';
+                //textareaの入力内容の高さを取得
+                let scrollHeight = textarea.scrollHeight;
+                //textareaの高さに入力内容の高さを設定
+                textarea.style.height = scrollHeight + 'px';
+            });
         </script>
         <!--------------->
     </body>
