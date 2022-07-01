@@ -14,6 +14,7 @@
             <div>
                 <input class="form-control w-100 mt-1" type="text" value="20220628001" id="id" name="id" placeholder="yyyymmdd###">
             </div>
+            <hr>
             <p class="mt-3">学校名コース名</p>
             <div>
                 <!-- 1つ目のセレクトボックス -->
@@ -39,10 +40,12 @@
                     <option name="course" disabled selected>コース名を選択してください</option>
                 </select>
             </div>
+            <hr>
             <p class="mt-3">名前（ひらがな or カタカナ、フルネーム）</p>
             <div>
                 <input class="form-control w-100 mt-1" name="name" placeholder="" required>
             </div>
+            <hr>
             <p class="mt-3">いつから？</p>
             <div>
                 <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateFrom" placeholder="">
@@ -51,6 +54,7 @@
             <div>
                 <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateTo" placeholder="">
             </div>
+            <hr>
             <p class="mt-3">登校便</p>
             <div>
                 <select class="form-control w-100 mt-1" id="toko" name="toko">
@@ -74,10 +78,12 @@
                     <option value='お休み' required>お休み</option>
                 </select>
             </div>
+            <hr>
             <p class="mt-3">特記事項</p>
             <div>
                 <input class="form-control w-100 mt-1" name="biko" value="-" required>
             </div>
+            <hr>
             <input type="button" class="mt-4 btn btn-primary" value="キャンセル" onclick="onCancelClick()">
             <input type="submit" class="mt-4 btn btn-primary" value="送信">
         </form>
