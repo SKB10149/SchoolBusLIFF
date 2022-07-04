@@ -177,6 +177,7 @@
             }
 
             function sendText(text) {
+                text = "=row()-1"+ text
                 liff.sendMessages([{
                     'type': 'text',
                     'text': text
@@ -204,7 +205,7 @@
                     const biko     = $('input[name="biko"]').val();
                     // const updateDateTime = now();
                     const msg = `\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
-                    sendText("=row()-1" + msg);
+                    sendText(msg);
                     return false;
                 });
             });
