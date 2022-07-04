@@ -203,8 +203,8 @@
                     const absence  = $('select[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
                     // const updateDateTime = now();
-                    const msg = `"=ROW()-1"\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
-                    sendText(msg);
+                    const msg = `\n${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}`;
+                    sendText("=row()-1" + msg);
                     return false;
                 });
             });
