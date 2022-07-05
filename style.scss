@@ -1,0 +1,12 @@
+.p-modal {
+    &[aria-hidden="true"] {
+      visibility: hidden;
+      opacity: 0;
+      transition: .4s;
+    }
+    &[aria-hidden="false"] {
+      visibility: visible;
+      opacity: 1;
+      transition: .4s;
+    }
+  }
