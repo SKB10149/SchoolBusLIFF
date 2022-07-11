@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion125</div>
+        <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion126</div>
         <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.00</div> -->
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
@@ -265,7 +265,7 @@
                     const absence  = $('select[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
                     //const setDateTime = now;
-                    const setDate = now.toDateString();
+                    const setDate = now.toDateString('yyyymmdd');
                     const setTime = now.toTimeString();
                     const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}\n${setDate}\n${setTime}`;
                     sendText(msg);
