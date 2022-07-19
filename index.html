@@ -2,15 +2,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>スクールバス乗車受付</title>
+        <title>スクールバス欠席連絡システム</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion127</div>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.00</div> -->
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion128</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.00</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -113,6 +113,8 @@
                     "拝島コース", 
                     "武蔵増戸コース", 
                     "急行檜原コース"
+                    /* 五日市コース */
+                    /* 羽村西コース */
                 ],
                 "八王子西特別支援学校": [
                     "陣馬コース", 
@@ -162,6 +164,7 @@
                 ],            
                 "小平特別支援学校": [
                     "こぶしコース"
+                    /* "はなみずきコース" */
                 ],
                 "光明学園": [
                     "仙川コース"
@@ -248,8 +251,6 @@
 
             const params = (new URL(document.location)).searchParams;
             const key = params.get('key');
-            // const accessToken = liff.getAccessToken();
-            // const idToken = liff.getIDToken();
 
             $(function () {
                 $('form').submit(function () {
@@ -264,7 +265,6 @@
                     const geko     = $('select[name="geko"]').val();
                     const absence  = $('select[name="absence"]').val();
                     const biko     = $('input[name="biko"]').val();
-                    //const setDateTime = now;
                     const setDate = now.toLocaleDateString('ja');
                     const setTime = now.toLocaleTimeString();
                     const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}\n${setDate}\n${setTime}`;
