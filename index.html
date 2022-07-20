@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion134</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.004.000</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion135</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.005.000</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -264,7 +264,13 @@
                     const toko     = $('select[name="toko"]').val();
                     const geko     = $('select[name="geko"]').val();
                     const absence  = $('select[name="absence"]').val();
-                    const biko     = $('input[name="biko"]').val();
+
+                    if($('input[name="biko"]').val() == ""){
+                        const biko     = "-";
+                    }else{
+                        const biko     = $('input[name="biko"]').val();
+                    }
+                    
                     const setDate = now.toLocaleDateString('ja');
                     const setTime = now.toLocaleTimeString();
                     const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}\n${setDate}\n${setTime}`;
