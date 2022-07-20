@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion131</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.001.000</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion132</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.002.000</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -286,6 +286,36 @@
                 }else{
                     toko_elm.disabled = false;
                     geko_elm.disabled = false;
+                }
+            }, false);
+        </script>
+        <script>
+            document.getElementById("toko").addEventListener("change", function(){
+                const elm = document.getElementById("toko");
+                const s_value = elm.options[elm.selectedIndex].value;
+                const absence_elm = document.getElementById("absence");
+
+                if(s_value == "乗る"){
+                    absence_elm.disabled = true;
+                }else if(s_value == "乗らない"){
+                    absence_elm.disabled = true;
+                }else{
+                    absence_elm.disabled = false;
+                }
+            }, false);
+        </script>
+        <script>
+            document.getElementById("geko").addEventListener("change", function(){
+                const elm = document.getElementById("geko");
+                const s_value = elm.options[elm.selectedIndex].value;
+                const absence_elm = document.getElementById("absence");
+
+                if(s_value == "乗る"){
+                    absence_elm.disabled = true;
+                }else if(s_value == "乗らない"){
+                    absence_elm.disabled = true;
+                }else{
+                    absence_elm.disabled = false;
                 }
             }, false);
         </script>
