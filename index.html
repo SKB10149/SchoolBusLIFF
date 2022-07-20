@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion133</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.003.000</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion134</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.004.000</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -297,9 +297,11 @@
                 const toko_value = toko_elm.options[toko_elm.selectedIndex].value;
                 const geko_value = geko_elm.options[geko_elm.selectedIndex].value;
 
-                if(toko_value == "乗る" && (geko_value == "乗る" || geko_value == "乗らない")){
+                if(toko_value == "乗る"){
                     absence_elm.disabled = true;
-                }else if(toko_value == "乗らない" && (geko_value == "乗る" || geko_value == "乗らない")){
+                }else if(toko_value == "乗らない"){
+                    absence_elm.disabled = true;
+                }else if(toko_value == "-" && (geko_value == "乗る" || geko_value == "乗らない")){
                     absence_elm.disabled = true;
                 }else{
                     absence_elm.disabled = false;
@@ -314,11 +316,11 @@
                 const toko_value = toko_elm.options[toko_elm.selectedIndex].value;
                 const geko_value = geko_elm.options[geko_elm.selectedIndex].value;
                 
-                
-
                 if(geko_value == "乗る"){
                     absence_elm.disabled = true;
                 }else if(geko_value == "乗らない"){
+                    absence_elm.disabled = true;
+                }else if(geko_value == "-" && (toko_value == "乗る" || toko_value == "乗らない")){
                     absence_elm.disabled = true;
                 }else{
                     absence_elm.disabled = false;
