@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion128</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.00</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion129</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.001.000</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -52,6 +52,13 @@
                 <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateTo" placeholder="">
             </div>
             <hr>
+            <p class="mt-3">休み？</p>
+            <div>
+                <select class="form-control w-100 mt-1" id="absence" name="absence">
+                    <option value='-' selected required>-</option>
+                    <option value='お休み' required>お休み</option>
+                </select>
+            </div>
             <p class="mt-3">登校便</p>
             <div>
                 <select class="form-control w-100 mt-1" id="toko" name="toko">
@@ -66,13 +73,6 @@
                     <option value='-' selected required>-</option>
                     <option value='乗る' required>乗る</option>
                     <option value='乗らない' required>乗らない</option>
-                </select>
-            </div>
-            <p class="mt-3">休み？</p>
-            <div>
-                <select class="form-control w-100 mt-1" id="absence" name="absence">
-                    <option value='-' selected required>-</option>
-                    <option value='お休み' required>お休み</option>
                 </select>
             </div>
             <hr>
@@ -272,6 +272,22 @@
                     return false;
                 });
             });
+        </script>
+        <script>
+            document.getElementById("absence").addEventListener("change", function(){
+                const elm = document.getElementById("absence");
+                const s_value = elm.selectedIndex.value;
+                const toko_elm = document.getElementById("toko");
+                const geko_elm = document.getElementById("geko");
+
+                if(s_value == "お休み"){
+                    toko_elm.disabled = true;
+                    geko_elm.disabled = true;
+                }else{
+                    toko_elm.disabled = false;
+                    geko_elm.disabled = false;
+                }
+            }, false);
         </script>
         <!--------------->
     </body>
