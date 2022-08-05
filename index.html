@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion136</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.006.000</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion137</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.007.000</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -31,6 +31,20 @@
                     <option value="小金井特別支援学校" name="小金井特別支援学校">小金井特別支援学校</option>
                     <option value="小平特別支援学校" name="小平特別支援学校">小平特別支援学校</option>
                     <option value="光明学園" name="光明学園">光明学園</option>
+
+                    <!-- ストック -->
+                    <!-- <option value="立川ろう学校" name="立川ろう学校">立川ろう学校</option> -->
+                    <!-- <option value="八王子東特別支援学校" name="八王子東特別支援学校">八王子東特別支援学校</option> -->
+                    <!-- <option value="八王子特別支援学校" name="八王子東特別支援学校">八王子特別支援学校</option> -->
+                    <!-- <option value="久留米特別支援学校" name="久留米特別支援学校">久留米特別支援学校</option> -->
+                    <!-- <option value="大泉特別支援学校" name="大泉特別支援学校">大泉特別支援学校</option> -->
+                    <!-- <option value="石神井特別支援学校" name="石神井特別支援学校">石神井特別支援学校</option> -->
+                    <!-- <option value="調布特別支援学校" name="調布特別支援学校">調布特別支援学校</option> -->
+                    <!-- <option value="練馬特別支援学校" name="練馬特別支援学校">練馬特別支援学校</option> -->
+                    <!-- <option value="高島特別支援学校" name="高島特別支援学校">高島特別支援学校</option> -->
+                    <!-- <option value="府中けやきの森学園" name="府中けやきの森学園">府中けやきの森学園</option> -->
+                    <!-- <option value="旭出学園" name="旭出学園">旭出学園</option> -->
+                    <!-- <option value="町田の丘学園" name="町田の丘学園">町田の丘学園</option> -->
                 </select>
                 <!-- 2つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="course" name="course" disabled>
@@ -74,6 +88,11 @@
                     <option value='乗る' required>乗る</option>
                     <option value='乗らない' required>乗らない</option>
                 </select>
+            </div>
+            <hr>
+            <p class="mt-3">ご連絡先</p>
+            <div>
+                <input class="form-control w-100 mt-1 h-500" name="tel" placeholder="電話番号を入力してください。確認の際にご連絡させていただく場合が御座います。" required>
             </div>
             <hr>
             <p class="mt-3">特記事項</p>
@@ -144,6 +163,8 @@
                 "清瀬特別支援学校": [
                     "富士見町コース", 
                     "東村山コース"
+                    // "本町コース"
+                    // "諏訪町コース"
                 ],
                 "立川学園": [
                     "西砂コース"
@@ -264,10 +285,11 @@
                     const toko     = $('select[name="toko"]').val();
                     const geko     = $('select[name="geko"]').val();
                     const absence  = $('select[name="absence"]').val();
+                    const tel     = $('input[name="tel"]').val();
                     const biko     = $('input[name="biko"]').val();
-                    const setDate = now.toLocaleDateString('ja');
-                    const setTime = now.toLocaleTimeString();
-                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${biko}\n${setDate}\n${setTime}`;
+                    const setDate  = now.toLocaleDateString('ja');
+                    const setTime  = now.toLocaleTimeString();
+                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\\n${biko}\n${setDate}\n${setTime}`;
                     sendText(msg);
                     return false;
                 });
