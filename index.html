@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion137</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.007.000</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion138</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.007.001</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -32,7 +32,7 @@
                     <option value="小平特別支援学校" name="小平特別支援学校">小平特別支援学校</option>
                     <option value="光明学園" name="光明学園">光明学園</option>
 
-                    <!-- ストック -->
+                    <!-- ストック　東京都　無作為に転記 -->
                     <!-- <option value="立川ろう学校" name="立川ろう学校">立川ろう学校</option> -->
                     <!-- <option value="八王子東特別支援学校" name="八王子東特別支援学校">八王子東特別支援学校</option> -->
                     <!-- <option value="八王子特別支援学校" name="八王子東特別支援学校">八王子特別支援学校</option> -->
@@ -289,7 +289,7 @@
                     const biko     = $('input[name="biko"]').val();
                     const setDate  = now.toLocaleDateString('ja');
                     const setTime  = now.toLocaleTimeString();
-                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\\n${biko}\n${setDate}\n${setTime}`;
+                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\n${biko}\n${setDate}\n${setTime}`;
                     sendText(msg);
                     return false;
                 });
