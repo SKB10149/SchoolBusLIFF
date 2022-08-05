@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
     </head>
     <body>
-        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion145</div> -->
-        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.007.007</div>
+        <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion146</div> -->
+        <div clsss="form-control w-100 mt-1" style="text-align : right">Ver1.007.008</div>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名コース名</p>
             <div>
@@ -294,7 +294,7 @@
                         const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\n${biko}\n${setDate}\n${setTime}`;
                         sendText(msg);
                     }else{
-                        sendText("連絡先にはハイフン【 - 】を入れて入力してください。");
+                        sendText("連絡先ハイフンエラー");
                     }
                     
                     return false;
