@@ -1,0 +1,11 @@
+textarea {
+    width: 100%;
+    height: 75px;
+}
+
+.scroll02 {
+    margin: 1px 0;
+    overflow-y: scroll;
+    height: 700px;
+    width: 100%;
+}
