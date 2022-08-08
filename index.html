@@ -10,8 +10,8 @@
     </head>
     <body>
         <header>
-            <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion155</div> -->
-            <div clsss="form-control w-100 mt-1" style="text-align : right"><span>Ver1.007.017</span></div>
+            <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion156</div> -->
+            <div clsss="form-control w-100 mt-1" style="text-align : right"><span>Ver1.007.018</span></div>
         </header>
         <form class="w-75 mx-auto">
             <div class="scroll02">
@@ -97,7 +97,9 @@
                 <p class="mt-1">　※ハイフン(-)必須</p>
                 <p class="mt-1">　※内容の確認の際、ご連絡させていただく場合が御座います。</p>
                 <div>
-                    <input type="tel" pattern="[\d-]*" class="form-control w-100 mt-1 h-500" name="tel" placeholder="例： 090-1111-1234" required>
+                    <p calss="alertarea">
+                        <input type="tel" pattern="[\d-]*" class="form-control w-100 mt-1 h-500" name="tel" placeholder="例： 090-1111-1234" required>
+                    </p>
                 </div>
                 <hr>
                 <p class="mt-3">特記事項</p>
@@ -356,6 +358,26 @@
                     absence_elm.disabled = false;
                 }
             }, false);
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var targets = document.getElementsByName("tel");
+                for(var i=0; i<targets.length; i++){
+                    targets[i].oninput = function(){
+                        var alertelement = this.parentNode.getElementsByClassName('alertarea');
+                        if( ( this.value != '') && ( this.value.match( /[^\d\-]+/ )) ) {
+                            // ▼何か入力があって、指定以外の文字があれば
+                            if( alertelement[0] ) { alertelement[0].innerHTML = '入力には、数字とハイフン記号だけが使えます。'; }
+                            this.style.border = "2px solid red";
+                        }
+                        else {
+                            // ▼何も入力がないか、または指定文字しかないなら
+                            if( alertelement[0] ) { alertelement[0].innerHTML = ""; }
+                            this.style.border = "1px solid black";
+                        }
+                    }
+                }
+            }
         </script>
         <!--------------->
     </body>
