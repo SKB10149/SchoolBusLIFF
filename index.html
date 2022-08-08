@@ -10,8 +10,8 @@
     </head>
     <body>
         <header>
-            <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion152</div> -->
-            <div clsss="form-control w-100 mt-1" style="text-align : right"><span>Ver1.007.014</span></div>
+            <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion153</div> -->
+            <div clsss="form-control w-100 mt-1" style="text-align : right"><span>Ver1.007.015</span></div>
         </header>
         <form class="w-75 mx-auto">
             <div class="scroll02">
@@ -296,7 +296,7 @@
                     const setDate  = now.toLocaleDateString('ja');
                     const setTime  = now.toLocaleTimeString();
 
-                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\n${biko}\n${setDate}\n${setTime}`;
+                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n'${tel}\n${biko}\n${setDate}\n${setTime}`;
                     sendText(msg);
                     
                     return false;
