@@ -10,8 +10,8 @@
     </head>
     <body>
         <header>
-            <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion153</div> -->
-            <div clsss="form-control w-100 mt-1" style="text-align : right"><span>Ver1.007.015</span></div>
+            <!-- <div clsss="form-control w-100 mt-1" style="text-align : right">CommitVersion154</div> -->
+            <div clsss="form-control w-100 mt-1" style="text-align : right"><span>Ver1.007.016</span></div>
         </header>
         <form class="w-75 mx-auto">
             <div class="scroll02">
@@ -291,12 +291,12 @@
                     const toko     = $('select[name="toko"]').val();
                     const geko     = $('select[name="geko"]').val();
                     const absence  = $('select[name="absence"]').val();
-                    const tel      = $('input[name="tel"]').val();
+                    const tel      = "'" + $('input[name="tel"]').val();
                     const biko     = $('input[name="biko"]').val();
                     const setDate  = now.toLocaleDateString('ja');
                     const setTime  = now.toLocaleTimeString();
 
-                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n'${tel}\n${biko}\n${setDate}\n${setTime}`;
+                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\n${biko}\n${setDate}\n${setTime}`;
                     sendText(msg);
                     
                     return false;
