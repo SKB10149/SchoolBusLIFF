@@ -1,7 +1,11 @@
 .no_scroll{
-    overflow: hidden;
+   overflow: hidden;
  }
 
  .abc{
-    text-align: center;
+   text-align: center;
+ }
+
+ .buttonCancelSubmit{
+   text-align: right;
  }
