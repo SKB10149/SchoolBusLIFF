@@ -10,9 +10,11 @@
    text-align: left;
  }
 
- /* .ghi{}
+ .ghi{
+   text-align: right;
+ }
 
- .jk{}
+ /* .jk{}
 
  .lmn{}
 
