@@ -11,8 +11,8 @@
     </head>
     <body>
         <header>
-            <!-- <div class="mt-0" style="text-align : right">CommitVersion170</div> -->
-            <div class="mt-0" style="text-align : right">Ver1.007.030</div>
+            <!-- <div class="mt-0" style="text-align : right">CommitVersion171</div> -->
+            <div class="mt-0" style="text-align : right">Ver1.007.031</div>
         </header>
         <form class="w-75 mx-auto">
             <p class="mt-3">学校名 School Name?</p>
@@ -112,7 +112,7 @@
             <hr>
             <div class="buttonCancelSubmit">
                 <input type="button" class="mt-4 btn btn-primary" value="キャンセル" onclick="onCancelClick()">
-                <input type="submit" class="mt-4 btn btn-primary" value="送信">
+                <input type="submit" class="mt-4 btn btn-primary" value="送信" onclick="return check()">
             </div>
         </form>
         <footer>
@@ -372,6 +372,17 @@
                 }
             }, false);
         </script>
+        <script>
+            function check(){
+                if(dateFrom > dateTo){
+                    alert("日付けの範囲が不正です。");
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        </script>
+        <script></script>
         <!--------------->
     </body>
 </html>
