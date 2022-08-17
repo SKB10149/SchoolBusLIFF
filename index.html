@@ -8,23 +8,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
         <link rel="stylesheet" href="css/index.css">
-        <script>
-            function check(){
-                if(dateFrom.value > dateTo.value){
-                    alert("日付けの範囲が不正です。");
-                    return false;
-                }else{
-                    return true;
-                }
-            }
-        </script>
     </head>
     <body>
         <header>
-            <!-- <div class="mt-0" style="text-align : right">CommitVersion173</div> -->
-            <div class="mt-0" style="text-align : right">Ver1.007.033</div>
+            <!-- <div class="mt-0" style="text-align : right">CommitVersion174</div> -->
+            <div class="mt-0" style="text-align : right">Ver1.007.034</div>
         </header>
-        <form class="w-75 mx-auto" method="get">
+        <form class="w-75 mx-auto" id="formSKB">
             <p class="mt-3">学校名 School Name?</p>
             <div>
                 <!-- 1つ目のセレクトボックス -->
@@ -382,7 +372,13 @@
                 }
             }, false);
         </script>
-        <script></script>
+        <script>
+            function check(){
+                if(formSKB.dateFrom.value > formSKB.dateTo.value){
+                    alert("error");
+                }
+            }
+        </script>
         <!--------------->
     </body>
 </html>
