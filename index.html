@@ -11,8 +11,8 @@
     </head>
     <body>
         <header>
-            <!-- <div class="mt-0" style="text-align : right">CommitVersion174</div> -->
-            <div class="mt-0" style="text-align : right">Ver1.007.034</div>
+            <!-- <div class="mt-0" style="text-align : right">CommitVersion175</div> -->
+            <div class="mt-0" style="text-align : right">Ver1.007.035</div>
         </header>
         <form class="w-75 mx-auto" id="formSKB">
             <p class="mt-3">学校名 School Name?</p>
@@ -375,7 +375,10 @@
         <script>
             function check(){
                 if(formSKB.dateFrom.value > formSKB.dateTo.value){
-                    alert("error");
+                    alert("指定された日付に選択誤りがあります。");
+                    return false;
+                }else{
+                    return true;
                 }
             }
         </script>
