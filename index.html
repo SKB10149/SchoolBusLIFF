@@ -11,11 +11,11 @@
     </head>
     <body>
         <header>
-            <!-- <div class="mt-0" style="text-align : right">CommitVersion175</div> -->
-            <div class="mt-0" style="text-align : right">Ver1.007.035</div>
+            <!-- <div class="mt-0" style="text-align : right">CommitVersion176</div> -->
+            <div class="mt-0" style="text-align : right">Ver1.008.000</div>
         </header>
         <form class="w-75 mx-auto" id="formSKB">
-            <p class="mt-3">学校名 School Name?</p>
+            <p class="mt-3">学校名<br><small>School Name?</small></p>
             <div>
                 <!-- 1つ目のセレクトボックス -->
                 <select class="form-control w-100 mt-1" id="school" name="school">
@@ -50,29 +50,31 @@
                     <!-- <option value="町田の丘学園" name="町田の丘学園">町田の丘学園</option> -->
                 </select>
                 <!-- 2つ目のセレクトボックス -->
-                <p class="mt-3">コース名 Course Name?</p>
+                <p class="mt-3">コース名<br><small>Course Name?</small></p>
                 <select class="form-control w-100 mt-1" id="course" name="course" disabled>
                     <option name="course" disabled selected>コース名を選択してください</option>
                 </select>
                 <p class="mt-1"><mark><small> ※学校名を選択すると、コース名が選択出来るようになります。</small></mark></p>
             </div>
             <hr>
-            <p class="mt-3">名前 Student Name?</p>
+            <p class="mt-3">名前<br><small>Student Name?</small></p>
             <div>
                 <input class="form-control w-100 mt-1" name="name" placeholder="なまえ　ナマエ　Name" required>
             </div>
-            <p class="mt-1"><mark><small>※ひらがな or カタカナ、フルネーム</small></mark></p>
+            <p class="mt-1"><mark><small>※ひらがな or カタカナ</small><br><small>※フルネーム</small></mark></p>
             <hr>
-            <p class="mt-3">いつから？ From Date?</p>
+            <p class="mt-3">いつから？<br><small>From Date?</small></p>
             <div>
                 <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateFrom" placeholder="いつから？">
             </div>
-            <p class="mt-3">いつまで？ To Date?</p>
+            <p class="mt-1"><mark><small>※カレンダーが開きます。</small></mark></p>
+            <p class="mt-3">いつまで？<br><small>To Date?</small></p>
             <div>
                 <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateTo" placeholder="いつまで？">
             </div>
+            <p class="mt-1"><mark><small>※カレンダーが開きます。</small></mark></p>
             <hr>
-            <p class="mt-3">休みますか？ Absence?</p>
+            <p class="mt-3">休みますか？<br><small>Absence?</small></p>
             <div>
                 <select class="form-control w-100 mt-1" id="absence" name="absence">
                     <option value='-' selected required>-</option>
@@ -80,7 +82,7 @@
                 </select>
             </div>
             <p class="mt-1"><mark><small> ※お休みを選択すると、登校便と下校便欄は選択出来なくなります。</small></mark></p>
-            <p class="mt-3">登校便に乗りますか？ Ride on school bus to school?</p>
+            <p class="mt-3">登校便に乗りますか？<br><small>Ride on school bus to school?</small></p>
             <div>
                 <select class="form-control w-100 mt-1" id="toko" name="toko">
                     <option value='-' selected required>-</option>
@@ -89,7 +91,7 @@
                 </select>
             </div>
             <p class="mt-1"><mark><small> ※登校便及び下校便欄を選択すると、お休み欄は選択出来なくなります。</small></mark></p>
-            <p class="mt-3">下校便に乗りますか？ Ride on school bus to home?</p>
+            <p class="mt-3">下校便に乗りますか？<br><small>Ride on school bus to home?</small></p>
             <div>
                 <select class="form-control w-100 mt-1" id="geko" name="geko">
                     <option value='-' selected required>-</option>
@@ -99,16 +101,17 @@
             </div>
             <p class="mt-1"><mark><small> ※登校便及び下校便欄を選択すると、お休み欄は選択出来なくなります。</small></mark></p>
             <hr>
-            <p class="mt-3">ご連絡先 TelePhone Number?</p>
+            <p class="mt-3">ご連絡先<br><small>TelePhone Number?</small></p>
             <div>
                 <input type="tel" pattern="[\d]*" class="form-control w-100 mt-1 h-500" name="tel" placeholder="例： 09012341234" required>
             </div>
-            <p class="mt-1"><mark><small> ※内容の確認の際、ご連絡させていただく場合が御座います。</small></mark></p>
+            <p class="mt-1"><mark><small>※内容の確認の際、ご連絡させていただく場合が御座います。</small></mark></p>
             <hr>
-            <p class="mt-3">特記事項 Note</p>
+            <p class="mt-3">特記事項<br><small>Note</small></p>
             <div>
                 <input class="form-control w-100 mt-1 h-500" name="biko" value="-" required>
             </div>
+            <p class="mt-1"><mark><small>※伝達事項があれば入力して下さい。</small></mark></p>
             <hr>
             <div class="buttonCancelSubmit">
                 <input type="button" class="mt-4 btn btn-primary" value="キャンセル" onclick="onCancelClick()">
@@ -375,7 +378,7 @@
         <script>
             function check(){
                 if(formSKB.dateFrom.value > formSKB.dateTo.value){
-                    alert("指定された日付に選択誤りがあります。");
+                    alert("指定された日付に選択誤りがあります。\n※エラーの例\n2022/08/31 ～ 2022/08/01");
                     return false;
                 }else{
                     return true;
