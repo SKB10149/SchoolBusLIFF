@@ -1,0 +1,378 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>スクールバス欠席連絡システム</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/jquery.datetimepicker.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <header>
+            <!-- <div class="mt-0" style="text-align : right">CommitVersion180</div> -->
+            <div class="mt-0" style="text-align : right">Ver1.008.004</div>
+        </header>
+        <form class="w-75 mx-auto" id="formSKB">
+            <p class="mt-3">学校名<br><small>School Name?</small></p>
+            <div>
+                <!-- 1つ目のセレクトボックス -->
+                <select class="form-control w-100 mt-1" id="school" name="school">
+                    <option disabled selected>学校名を選択してください</option>
+                    <option value="羽村特別支援学校" name="羽村特別支援学校">羽村特別支援学校</option>
+                    <option value="あきる野学園" name="あきる野学園">あきる野学園</option>
+                    <option value="八王子西特別支援学校" name="八王子西特別支援学校">八王子西特別支援学校</option>
+                    <option value="七生特別支援学校" name="七生特別支援学校">七生特別支援学校</option>
+                    <option value="青峰学園" name="青峰学園">青峰学園</option>
+                    <option value="八王子盲学校" name="八王子盲学校">八王子盲学校</option>
+                    <option value="村山特別支援学校" name="村山特別支援学校">村山特別支援学校</option>
+                    <option value="武蔵台学園" name="武蔵台学園">武蔵台学園</option>
+                    <option value="田無特別支援学校" name="田無特別支援学校">田無特別支援学校</option>
+                    <option value="清瀬特別支援学校" name="清瀬特別支援学校">清瀬特別支援学校</option>
+                    <option value="立川学園" name="立川学園">立川学園</option>
+                    <option value="小金井特別支援学校" name="小金井特別支援学校">小金井特別支援学校</option>
+                    <option value="小平特別支援学校" name="小平特別支援学校">小平特別支援学校</option>
+                    <option value="光明学園" name="光明学園">光明学園</option>
+                </select>
+                <!-- 2つ目のセレクトボックス -->
+                <p class="mt-3">コース名<br><small>Course Name?</small></p>
+                <select class="form-control w-100 mt-1" id="course" name="course" disabled>
+                    <option name="course" disabled selected>コース名を選択してください</option>
+                </select>
+                <p class="mt-1"><mark><small> ※学校名を選択すると、コース名が選択出来るようになります。</small></mark></p>
+            </div>
+            <hr>
+            <p class="mt-3">名前<br><small>Student Name?</small></p>
+            <div>
+                <input class="form-control w-100 mt-1" name="name" placeholder="なまえ　ナマエ　Name" required>
+            </div>
+            <p class="mt-1"><mark><small>※ひらがな or カタカナ </small><small>※フルネーム</small></mark></p>
+            <hr>
+            <p class="mt-3">いつから？<br><small>From Date?</small></p>
+            <div>
+                <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateFrom" placeholder="いつから？">
+            </div>
+            <p class="mt-1"><mark><small>※カレンダーが開きます。</small></mark></p>
+            <p class="mt-3">いつまで？<br><small>To Date?</small></p>
+            <div>
+                <input class="datetimepicker form-control w-100 mt-1" type="text" name="dateTo" placeholder="いつまで？">
+            </div>
+            <p class="mt-1"><mark><small>※カレンダーが開きます。</small></mark></p>
+            <hr>
+            <p class="mt-3">休みますか？<br><small>Absence?</small></p>
+            <div>
+                <select class="form-control w-100 mt-1" id="absence" name="absence">
+                    <option value='-' selected required>-</option>
+                    <option value='お休み' required>お休み</option>
+                </select>
+            </div>
+            <p class="mt-1"><mark><small> ※お休みを選択すると、登校便と下校便欄は選択出来なくなります。</small></mark></p>
+            <p class="mt-3">登校便に乗りますか？<br><small>Ride on school bus to school?</small></p>
+            <div>
+                <select class="form-control w-100 mt-1" id="toko" name="toko">
+                    <option value='-' selected required>-</option>
+                    <option value='乗る' required>乗る</option>
+                    <option value='乗らない' required>乗らない</option>
+                </select>
+            </div>
+            <p class="mt-1"><mark><small> ※登校便及び下校便欄を選択すると、お休み欄は選択出来なくなります。</small></mark></p>
+            <p class="mt-3">下校便に乗りますか？<br><small>Ride on school bus to home?</small></p>
+            <div>
+                <select class="form-control w-100 mt-1" id="geko" name="geko">
+                    <option value='-' selected required>-</option>
+                    <option value='乗る' required>乗る</option>
+                    <option value='乗らない' required>乗らない</option>
+                </select>
+            </div>
+            <p class="mt-1"><mark><small> ※登校便及び下校便欄を選択すると、お休み欄は選択出来なくなります。</small></mark></p>
+            <hr>
+            <p class="mt-3">ご連絡先<br><small>TelePhone Number?</small></p>
+            <div>
+                <input type="tel" pattern="[\d]*" class="form-control w-100 mt-1 h-500" name="tel" placeholder="例： 09012341234" required>
+            </div>
+            <p class="mt-1"><mark><small>※内容の確認の際、ご連絡させていただく場合が御座います。</small></mark></p>
+            <hr>
+            <p class="mt-3">特記事項<br><small>Note</small></p>
+            <div>
+                <input class="form-control w-100 mt-1 h-500" name="biko" value="-" required>
+            </div>
+            <p class="mt-1"><mark><small>※伝達事項があれば入力して下さい。</small></mark></p>
+            <hr>
+            <div class="buttonCancelSubmit">
+                <input type="button" class="mt-4 btn btn-outline-primary" value="キャンセル" onclick="onCancelClick()">
+                <input type="submit" class="mt-4 btn btn-primary" value="送信" onclick="return check()">
+            </div>
+        </form>
+        <footer>
+            <div class="abc">
+                <img height="163.75px" width="287px" src="pic/logo.png">
+            </div>
+            <div style="text-align : center">Copyright (C) 2011-2022 総合観光バス株式会社</div>
+            <!-- <div style="text-align : center">株式会社SKB</div> -->
+            <div style="text-align : center">All Rights Reserved.</div>
+            <br>
+        </footer>
+
+        <!--Javascript--->
+        <script>
+            // 学校名の値と、それに対応するコース一覧を格納 [1]
+            const courseName = {
+                "羽村特別支援学校": [
+                    "旧青梅コース", 
+                    "友愛コース", 
+                    "成木コース", 
+                    "東大和コース", 
+                    "羽村コース", 
+                    "武蔵村山コース", 
+                    "御岳コース", 
+                    "奥多摩コース", 
+                    "青梅コース", 
+                    "立川コース", 
+                    "新青梅街道コース", 
+                    "福生コース"
+                    /*"瑞穂コース"*/
+                ],
+                "あきる野学園": [
+                    "東中神コース", 
+                    "檜原コース", 
+                    "昭島コース", 
+                    "新五日市コース", 
+                    "拝島コース", 
+                    "武蔵増戸コース", 
+                    "急行檜原コース"
+                    /* 五日市コース */
+                    /* 羽村西コース */
+                ],
+                "八王子西特別支援学校": [
+                    "陣馬コース", 
+                    "石川コース", 
+                    "川口コース", 
+                    "大和田コース"
+                ],
+                "七生特別支援学校": [
+                    "日野駅コース", 
+                    "万願寺コース"
+                ],
+                "青峰学園": [
+                    "二俣尾コース", 
+                    "西コース"
+                ],
+                "武蔵台学園": [
+                    "国立コース", 
+                    "立川南コース"
+                    /*"滝乃川コース", */
+                    /*"立川北コース", */
+                    /*"国分寺コース"*/
+                ],
+                "田無特別支援学校": [
+                    "西東京コース", 
+                    "小平コース"
+                ],
+                "清瀬特別支援学校": [
+                    "富士見町コース", 
+                    "東村山コース"
+                    // "本町コース"
+                    // "諏訪町コース"
+                ],
+                "立川学園": [
+                    "西砂コース"
+                ],
+                "小金井特別支援学校": [
+                    "小平コース"
+                ],
+                "八王子盲学校": [
+                    "昭島コース"
+                ],
+                "村山特別支援学校": [
+                    "立川諏訪コース", 
+                    "青梅橋コース", 
+                    "昭和公園コース", 
+                    "江戸街道コース", 
+                    "多摩川コース", 
+                    "モノレールコース"
+                ],            
+                "小平特別支援学校": [
+                    "こぶしコース"
+                    /* "はなみずきコース" */
+                ],
+                "光明学園": [
+                    "仙川コース"
+                ]
+            };
+
+            // 選択された学校名を受け取って処理 [4]
+            const setCourseOptions = function(selectedSchool){
+                const selectCourseName = document.getElementById('course'); //2つ目のセレクトボックスを取得
+                var element = document.getElementById('course');
+                while (element.firstChild) {
+                    element.removeChild(element.firstChild);
+                }
+                selectCourseName.disabled = false; //選択可能な状態にする
+
+                //選択された学校名のコース一覧に対して処理をする
+                courseName[selectedSchool].forEach((menu, index) => {
+                    const option = document.createElement('option'); //option要素を新しく作る
+                    option.value = index; //option要素の値に、コースを識別できる番号を指定する
+                    option.innerHTML = menu; //ユーザー向けの表示としてメニュー名を指定する
+                    selectCourseName.appendChild(option); //セレクトボックスにoption要素を追加する
+                });
+            }
+
+            // 学校名を選ぶためのセレクトボックスを指定 [2]
+            const schoolSelect = document.getElementById('school');
+
+            // 学校名が選択されたら（change）、処理を行う [3]
+            schoolSelect.addEventListener('change', (e) => {
+                /******************************************
+                選択された学校名を引数として関数に渡す
+                ※e.target.valueはschoolSelectで選択された値
+                ******************************************/
+                setCourseOptions(e.target.value);
+            })
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.full.min.js"></script>
+        <script>
+            $('.datetimepicker').datetimepicker({
+                timepicker:false,
+                format: 'Y/m/d'
+            });
+        </script>
+        <script>
+            function onCancelClick(){
+                liff.closeWindow();
+            }
+        </script>
+        <script>
+            $(document).ready(function(){
+                const liffId = "1657192970-L5pw3bd6";
+                initializeLiff(liffId);
+            })
+
+            function initializeLiff(liffId) {
+                liff.init({
+                    liffId: liffId
+                }).then(() => {
+                    initializeApp();
+                }).catch((err) => {
+                    console.log('LIFF Initialization failed ', err);
+                });
+            }
+            
+            function sendText(text) {
+                liff.sendMessages([{
+                    'type': 'text',
+                    'text': text
+                }]).then(function(){
+                    liff.closeWindow();
+                }).catch(function(error){
+                    window.alert('Failed to send message ' + error);
+                });
+            }
+
+            const params = (new URL(document.location)).searchParams;
+            const key = params.get('key');
+
+            $(function(){
+                $('form').submit(function(){
+                    const now = new Date();
+
+                    const school   = $('select[name="school"]').val();
+                    const course   = $('select[name="course"] option:selected').text();
+                    const name     = $('input[name="name"]').val();
+                    const dateFrom = $('input[name="dateFrom"]').val();
+                    const dateTo   = $('input[name="dateTo"]').val();
+                    const toko     = $('select[name="toko"]').val();
+                    const geko     = $('select[name="geko"]').val();
+                    const absence  = $('select[name="absence"]').val();
+                    const tel      = $('input[name="tel"]').val();
+                    const biko     = $('input[name="biko"]').val();
+                    const setDate  = now.toLocaleDateString('ja');
+                    const setTime  = now.toLocaleTimeString();
+
+                    const msg = `${school}\n${course}\n${name}\n${dateFrom}\n${dateTo}\n${toko}\n${geko}\n${absence}\n${tel}\n${biko}\n${setDate}\n${setTime}`;
+                    sendText(msg);
+                    
+                    return false;
+                });
+            });
+        </script>
+        <script>
+            document.getElementById("absence").addEventListener("change", function(){
+                const toko_elm = document.getElementById("toko");
+                const geko_elm = document.getElementById("geko");
+                const absence_elm = document.getElementById("absence");
+                const absence_value = absence_elm.options[absence_elm.selectedIndex].value;
+
+                if(absence_value == "お休み"){
+                    toko_elm.disabled = true;
+                    geko_elm.disabled = true;
+                }else{
+                    toko_elm.disabled = false;
+                    geko_elm.disabled = false;
+                }
+            }, false);
+        </script>
+        <script>
+            document.getElementById("toko").addEventListener("change", function(){
+                const toko_elm = document.getElementById("toko");
+                const geko_elm = document.getElementById("geko");
+                const absence_elm = document.getElementById("absence");
+                const toko_value = toko_elm.options[toko_elm.selectedIndex].value;
+                const geko_value = geko_elm.options[geko_elm.selectedIndex].value;
+
+                if(toko_value == "乗る"){
+                    absence_elm.disabled = true;
+                }else if(toko_value == "乗らない"){
+                    absence_elm.disabled = true;
+                }else if(toko_value == "-" && (geko_value == "乗る" || geko_value == "乗らない")){
+                    absence_elm.disabled = true;
+                }else{
+                    absence_elm.disabled = false;
+                }
+            }, false);
+        </script>
+        <script>
+            document.getElementById("geko").addEventListener("change", function(){
+                const toko_elm = document.getElementById("toko");
+                const geko_elm = document.getElementById("geko");
+                const absence_elm = document.getElementById("absence");
+                const toko_value = toko_elm.options[toko_elm.selectedIndex].value;
+                const geko_value = geko_elm.options[geko_elm.selectedIndex].value;
+                
+                if(geko_value == "乗る"){
+                    absence_elm.disabled = true;
+                }else if(geko_value == "乗らない"){
+                    absence_elm.disabled = true;
+                }else if(geko_value == "-" && (toko_value == "乗る" || toko_value == "乗らない")){
+                    absence_elm.disabled = true;
+                }else{
+                    absence_elm.disabled = false;
+                }
+            }, false);
+        </script>
+        <script>
+            function check(){
+                if(formSKB.absence.value == "-" && formSKB.toko.value == "-" && formSKB.geko.value == "-"){
+                    alert("お休み欄、登校便欄、下校便欄から最低1つ選択してください。");
+                    return false;
+                }else{
+                    //日付入力チェック
+                    if(formSKB.dateFrom.value > formSKB.dateTo.value){
+                        alert("指定された日付に選択誤りがあります。\n※エラーの例\n2022/08/31 ～ 2022/08/01");
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+            }
+        </script>
+        <!--------------->
+    </body>
+</html>

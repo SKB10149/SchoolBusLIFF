@@ -1,0 +1,31 @@
+.no_scroll{
+   overflow: hidden;
+ }
+
+ .abc{
+   text-align: center;
+ }
+
+ .def{
+   text-align: left;
+ }
+
+ .ghi{
+   text-align: right;
+ }
+
+ /* .jk{}
+
+ .lmn{}
+
+ .opq{}
+
+ .rstu{}
+
+ .vw{}
+
+ .xyz{} */
+
+ .buttonCancelSubmit{
+   text-align: right;
+ }
