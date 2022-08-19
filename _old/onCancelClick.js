@@ -1,0 +1,3 @@
+function onCancelClick(){
+    liff.closeWindow();
+}
