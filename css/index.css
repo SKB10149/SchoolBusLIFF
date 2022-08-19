@@ -1,6 +1,6 @@
-body{
-  background: white url("../pic/haibisukasu.png") top right no-repeat;
-}
+/* body{
+  background: white url("../pic/haibisukasu.png") top left no-repeat;
+} */
 
 .no_scroll{
    overflow: hidden;
