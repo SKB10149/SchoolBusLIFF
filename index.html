@@ -11,8 +11,8 @@
     </head>
     <body>
         <header>
-            <!-- <div class="mt-0" style="text-align : right">CommitVersion176</div> -->
-            <div class="mt-0" style="text-align : right">Ver1.008.000</div>
+            <!-- <div class="mt-0" style="text-align : right">CommitVersion177</div> -->
+            <div class="mt-0" style="text-align : right">Ver1.008.001</div>
         </header>
         <form class="w-75 mx-auto" id="formSKB">
             <p class="mt-3">学校名<br><small>School Name?</small></p>
@@ -34,20 +34,6 @@
                     <option value="小金井特別支援学校" name="小金井特別支援学校">小金井特別支援学校</option>
                     <option value="小平特別支援学校" name="小平特別支援学校">小平特別支援学校</option>
                     <option value="光明学園" name="光明学園">光明学園</option>
-
-                    <!-- ストック　東京都　無作為に転記 -->
-                    <!-- <option value="立川ろう学校" name="立川ろう学校">立川ろう学校</option> -->
-                    <!-- <option value="八王子東特別支援学校" name="八王子東特別支援学校">八王子東特別支援学校</option> -->
-                    <!-- <option value="八王子特別支援学校" name="八王子東特別支援学校">八王子特別支援学校</option> -->
-                    <!-- <option value="久留米特別支援学校" name="久留米特別支援学校">久留米特別支援学校</option> -->
-                    <!-- <option value="大泉特別支援学校" name="大泉特別支援学校">大泉特別支援学校</option> -->
-                    <!-- <option value="石神井特別支援学校" name="石神井特別支援学校">石神井特別支援学校</option> -->
-                    <!-- <option value="調布特別支援学校" name="調布特別支援学校">調布特別支援学校</option> -->
-                    <!-- <option value="練馬特別支援学校" name="練馬特別支援学校">練馬特別支援学校</option> -->
-                    <!-- <option value="高島特別支援学校" name="高島特別支援学校">高島特別支援学校</option> -->
-                    <!-- <option value="府中けやきの森学園" name="府中けやきの森学園">府中けやきの森学園</option> -->
-                    <!-- <option value="旭出学園" name="旭出学園">旭出学園</option> -->
-                    <!-- <option value="町田の丘学園" name="町田の丘学園">町田の丘学園</option> -->
                 </select>
                 <!-- 2つ目のセレクトボックス -->
                 <p class="mt-3">コース名<br><small>Course Name?</small></p>
@@ -61,7 +47,7 @@
             <div>
                 <input class="form-control w-100 mt-1" name="name" placeholder="なまえ　ナマエ　Name" required>
             </div>
-            <p class="mt-1"><mark><small>※ひらがな or カタカナ</small><br><small>※フルネーム</small></mark></p>
+            <p class="mt-1"><mark><small>※ひらがな or カタカナ </small><small>※フルネーム</small></mark></p>
             <hr>
             <p class="mt-3">いつから？<br><small>From Date?</small></p>
             <div>
@@ -114,7 +100,7 @@
             <p class="mt-1"><mark><small>※伝達事項があれば入力して下さい。</small></mark></p>
             <hr>
             <div class="buttonCancelSubmit">
-                <input type="button" class="mt-4 btn btn-primary" value="キャンセル" onclick="onCancelClick()">
+                <input type="button" class="mt-4 btn btn-outline-primary" value="キャンセル" onclick="onCancelClick()">
                 <input type="submit" class="mt-4 btn btn-primary" value="送信" onclick="return check()">
             </div>
         </form>
@@ -131,8 +117,7 @@
         <!--Javascript--->
         <script>
             // 学校名の値と、それに対応するコース一覧を格納 [1]
-            const courseName = 
-            {
+            const courseName = {
                 "羽村特別支援学校": [
                     "旧青梅コース", 
                     "友愛コース", 
@@ -251,11 +236,8 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> //古いバージョン -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.20/build/jquery.datetimepicker.full.min.js"></script>
-        <script src="jsonOutput.js"></script>
-        <script src="modal.js"></script>
         <script>
             $('.datetimepicker').datetimepicker({
                 timepicker:false,
@@ -268,7 +250,7 @@
             }
         </script>
         <script>
-            $(document).ready(function () {
+            $(document).ready(function(){
                 const liffId = "1657192970-L5pw3bd6";
                 initializeLiff(liffId);
             })
@@ -287,9 +269,9 @@
                 liff.sendMessages([{
                     'type': 'text',
                     'text': text
-                }]).then(function () {
+                }]).then(function(){
                     liff.closeWindow();
-                }).catch(function (error) {
+                }).catch(function(error){
                     window.alert('Failed to send message ' + error);
                 });
             }
@@ -297,8 +279,8 @@
             const params = (new URL(document.location)).searchParams;
             const key = params.get('key');
 
-            $(function () {
-                $('form').submit(function () {
+            $(function(){
+                $('form').submit(function(){
                     const now = new Date();
 
                     const school   = $('select[name="school"]').val();
